@@ -2,11 +2,19 @@ package hello;
 
 import java.util.List;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+public interface CustomerRepository {
+    Customer save(Customer customer);
 
-public interface CustomerRepository extends MongoRepository<Customer, String> {
+    void update(Customer customer);
 
-    public Customer findByFirstName(String firstName);
-    public List<Customer> findByLastName(String lastName);
+    Customer findByFirstName(String firstName);
+
+    List<Customer> findByLastName(String lastName);
+
+    void deleteAll();
+
+    void delete(Customer customer);
+
+    List<Customer> findAll();
 
 }

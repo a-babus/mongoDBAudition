@@ -1,0 +1,14 @@
+# Spring properties
+spring:
+  application:
+    name: car-service
+  data:
+    mongodb.host: mongodb
+    mongodb.port: 2717
+    mongodb.uri: mongodb://localhost:2717/test
+    mongo.repositories.enabled: true
+
+javers:
+  documentDbCompatibilityEnabled: false
+  objectAccessHook: org.javers.spring.mongodb.DBRefUnproxyObjectAccessHook
+  snapshotsCacheSize: 5000
