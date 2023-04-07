@@ -1,4 +1,4 @@
-package hello;
+package hello.config;
 
 import org.javers.spring.auditable.AuthorProvider;
 import org.springframework.context.annotation.Bean;

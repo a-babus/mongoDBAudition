@@ -1,4 +1,6 @@
-package hello;
+package hello.repository;
+
+import hello.repository.entity.Customer;
 
 import java.util.List;
 
@@ -10,6 +12,8 @@ public interface CustomerRepository {
     Customer findByFirstName(String firstName);
 
     List<Customer> findByLastName(String lastName);
+
+    Customer findByFirstAndLastName(String firstName, String lastName);
 
     void deleteAll();
 

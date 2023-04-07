@@ -1,4 +1,6 @@
 # Spring properties
+server:
+  port : 2081
 spring:
   application:
     name: car-service
@@ -13,3 +15,4 @@ javers:
   headCollectionName: "jv_customer_head_id"
   schemaManagementEnabled: false
   snapshotsCacheSize: 5000
+

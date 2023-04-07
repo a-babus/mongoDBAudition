@@ -1,5 +1,6 @@
-package hello;
+package hello.repository;
 
+import hello.repository.entity.Customer;
 import org.javers.spring.annotation.JaversSpringDataAuditable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
