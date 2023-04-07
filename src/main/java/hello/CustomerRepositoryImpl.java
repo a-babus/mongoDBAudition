@@ -1,6 +1,7 @@
 package hello;
 
 import org.javers.spring.annotation.JaversAuditable;
+import org.javers.spring.annotation.JaversAuditableDelete;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -17,19 +18,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         this.mongoTemplate = mongoTemplate;
     }
 
-    @JaversAuditable
     public Customer save(Customer customer) {
         return mongoTemplate.save(customer);
     }
 
     @JaversAuditable
     public void update(Customer customer) {
-//        Query query = new Query();
-//        query.addCriteria(Criteria.where("firstName").is(customer.getFirstName()));
-//        Update update = new Update();
-//        update.set("firstName", newName);
-
-//        mongoTemplate.updateFirst(query, update, Customer.class);
         mongoTemplate.save(customer);
     }
 
@@ -49,7 +43,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         mongoTemplate.remove(new Query(), "customer");
     }
 
-    @JaversAuditable
+    @JaversAuditableDelete
     public void delete(Customer customer) {
         mongoTemplate.remove(customer);
     }

@@ -28,20 +28,18 @@ public class Application implements CommandLineRunner {
         Customer aliceCustomer = new Customer("Alice", "Smith");
         Customer bobCustomer = new Customer("Bob", "Smith");
 
-        repository.save(aliceCustomer);
-        repository.save(bobCustomer);
+        customerMongoRepository.save(aliceCustomer);
+        customerMongoRepository.save(bobCustomer);
+
+        aliceCustomer.setFirstName("Jane");
+        repository.update(aliceCustomer);
 
         aliceCustomer.setLastName("Black");
         repository.update(aliceCustomer);
 
-        aliceCustomer.setLastName("Smith");
-        customerMongoRepository.save(aliceCustomer);
+        customerMongoRepository.delete(bobCustomer);
 
-        customerMongoRepository.delete(aliceCustomer);
-
-        //FixMe: Is not logged with MongoTemplate, to be investigated
-//        repository.delete(aliceCustomer);
-//        repository.delete(bobCustomer);
+        repository.delete(aliceCustomer);
 
     }
 }

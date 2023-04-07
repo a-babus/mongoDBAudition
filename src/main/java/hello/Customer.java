@@ -1,5 +1,7 @@
 package hello;
 
+import org.javers.core.metamodel.annotation.DiffIgnore;
+import org.javers.core.metamodel.annotation.DiffInclude;
 import org.springframework.data.annotation.Id;
 
 
@@ -8,6 +10,7 @@ public class Customer {
     @Id
     private String id;
 
+    @DiffIgnore
     private String firstName;
     private String lastName;
 

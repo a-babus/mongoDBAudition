@@ -9,6 +9,7 @@ spring:
     mongo.repositories.enabled: true
 
 javers:
-  documentDbCompatibilityEnabled: false
-  objectAccessHook: org.javers.spring.mongodb.DBRefUnproxyObjectAccessHook
+  snapshotCollectionName: "jv_customer_snapshots"
+  headCollectionName: "jv_customer_head_id"
+  schemaManagementEnabled: false
   snapshotsCacheSize: 5000
